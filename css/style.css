@@ -10,6 +10,7 @@ body {
 }
 
 h1 {
+    font-size: 30px;
     color: #2c3e50;
 }
 
@@ -185,6 +186,12 @@ a.link:before {
 .section#contato .info .fab,
 .section#contato .info .far {
     margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
 }
 
 @media (min-width: 992px) {
