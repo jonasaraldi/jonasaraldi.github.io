@@ -1,14 +1,27 @@
-(function(doc, $) {
+(function(win, doc, $) {
 
-    $('.navbar-nav a').on('click', function(ev) {
-        ev.preventDefault();
+    $(doc).ready(init);
 
-        var href = $(this).attr("href")
-        var id = href.substring(1);
+    function init() {
+        calculateBodyPaddingTop();
 
-        doc.getElementById(id).scrollIntoView({
-            behavior: 'smooth'
-        });
-    }); 
+        $(win).on('resize', calculateBodyPaddingTop);
 
-})(document, jQuery);
+        $('.navbar-nav a').on('click', function(ev) {
+            ev.preventDefault();
+    
+            var href = $(this).attr("href")
+            var id = href.substring(1);
+    
+            doc.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }); 
+    }
+
+    function calculateBodyPaddingTop() {
+        var heightStartSection = $('.section#about')[0].offsetHeight;
+        $('body').css('padding-top', heightStartSection + 'px');
+    }
+
+})(window, document, jQuery);
