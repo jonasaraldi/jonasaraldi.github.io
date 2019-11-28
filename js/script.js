@@ -3,10 +3,6 @@
     $(doc).ready(init);
 
     function init() {
-        calculateBodyPaddingTop();
-
-        $(win).on('resize', calculateBodyPaddingTop);
-
         $('.navbar-nav a').on('click', function(ev) {
             ev.preventDefault();
     
@@ -30,12 +26,7 @@
             toggleCheckpointOrder();
         });
     }
-
-    function calculateBodyPaddingTop() {
-        var heightStartSection = $('.section#about')[0].offsetHeight;
-        $('body').css('padding-top', heightStartSection + 'px');
-    }
-
+    
     function toggleCheckpointOrder() {
         var $timeline = $('.timeline');
         var $checkpointReverted = $('.checkpoint').get().reverse();
