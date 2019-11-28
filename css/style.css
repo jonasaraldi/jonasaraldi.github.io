@@ -20,11 +20,10 @@ h1 + p {
 }
 
 h2 {
-    font-size: 42px;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 10px;
-    font-size: 70px;
+    font-size: 40px;
     opacity: 0.6;
 }
 
