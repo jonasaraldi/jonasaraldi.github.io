@@ -38,7 +38,7 @@
 
     function toggleCheckpointOrder() {
         var $timeline = $('.timeline');
-        var $checkpointReverted = $('[data-checkpoint-order]').get().reverse();
+        var $checkpointReverted = $('.checkpoint').get().reverse();
         var timelineHtml = $checkpointReverted.map(checkpoint => $(checkpoint)[0].outerHTML).join('');;
 
         $timeline.html(timelineHtml);
